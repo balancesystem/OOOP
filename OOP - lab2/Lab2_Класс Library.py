@@ -37,7 +37,12 @@ class Library:
     Если книги есть, то вернуть идентификатор последней книги увеличенный на 1.
     """
     def get_next_book_id(self) -> int:
-        return len(self.books) + 1
+#        return len(self.books) + 1
+        count_books = len(self.books)
+        if count_books == 0:
+            return 1
+        else:
+            return self.books[count_books - 1].id + 1
 
     """
     Метод, возвращающий индекс книги в списке, который хранится в атрибуте экземпляра класса.
